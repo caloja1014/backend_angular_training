@@ -4,10 +4,17 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('backend-angular-training:server');
-var http = require('http');
+// var app = require('../app');
+// var debug = require('debug')('backend-angular-training:server');
+// var http = require('http');
 
+import app from '../app.js';
+import debugLib from 'debug';
+import http from 'http';
+import { seedDatabase } from "../seed/seedData.js";
+import { initModels } from '../models/index.js';
+
+const debug = debugLib('backend-angular-training:server');
 /**
  * Get port from environment and store in Express.
  */
@@ -25,9 +32,17 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+
+const startServer = async () => {
+  await initModels();
+  await seedDatabase();
+  server.listen(port);
+
+  server.on('error', onError);
+  server.on('listening', onListening);
+  console.log(`🚀 Server running at http://localhost:${port}/ `);
+};
+startServer();
 
 /**
  * Normalize a port into a number, string, or false.

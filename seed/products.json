@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Wireless Mouse",
+        "description": "Ergonomic wireless mouse with USB receiver.",
+        "price": 19.99,
+        "category": "Electronics",
+        "stock": 10
+    },
+    {
+        "name": "Mechanical Keyboard",
+        "description": "RGB backlit mechanical keyboard.",
+        "price": 59.99,
+        "category": "Electronics",
+        "stock": 5
+    },
+    {
+        "name": "Coffee Maker",
+        "description": "Automatic drip coffee maker with timer.",
+        "price": 49.5,
+        "category": "Home & Kitchen",
+        "stock": 3
+    },
+    {
+        "name": "Cookbook",
+        "description": "100 easy and delicious recipes.",
+        "price": 15.0,
+        "category": "Books",
+        "stock": 20
+    }
+]
